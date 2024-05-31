@@ -1,0 +1,29 @@
+{
+  "name": "authserver",
+  "version": "1.0.0",
+  "description": "This is a auth service in nodejs",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "ts-node-dev src/index.ts",
+    "dev": "nodemon src/index.ts"
+  },
+  "keywords": [
+    "Auth"
+  ],
+  "author": "Rohan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
+    "mongoose-update-if-current": "^1.4.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.2"
+  }
+}
