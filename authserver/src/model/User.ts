@@ -1,6 +1,7 @@
 import { Document } from "mongoose";
 import {updateIfCurrentPlugin} from  "mongoose-update-if-current"
 import mongoose from "mongoose";
+
 interface User{
     email:String,
     password:String

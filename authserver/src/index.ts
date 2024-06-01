@@ -13,7 +13,7 @@ const startAllConfigForServer=async ()=>{
     }
   
     try{
-        const connectionResponse=await mainDBConnection()
+       const connectionResponse=await mainDBConnection()
         console.log("Connected to AUTH MongoDb");
         const databases=connectionResponse?.databases;
         console.log("List of Databases in our cluster =>",databases)

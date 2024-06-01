@@ -15,11 +15,19 @@ app.get('/', (req, res) => {
   res.send('Hello, TypeScript with Express!');
 });
 
+app.get("/test",()=>{
+  throw new Error("asudgbyuasgdyugasdyugasd")
+})
+
+
+
 
 app.use((err:Error,req:Request,res:Response,next:NextFunction)=>{
   console.log("Default express error handler called \n");
   console.log(err);
-  return 
+  return res.status(500).json({
+    err:err
+  })
 })
 
 export {app};
