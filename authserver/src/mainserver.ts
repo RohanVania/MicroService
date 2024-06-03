@@ -1,3 +1,4 @@
+import "express-async-errors"
 import express from 'express';
 import dotenv from "dotenv"
 import {Response,Request,NextFunction} from "express"
@@ -8,26 +9,20 @@ dotenv.config({path:"../environmentfolders/.env"})
 const app = express();
 
 app.use(express.json());
-app.use(UserRoutes)
-
+app.use(UserRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello, TypeScript with Express!');
 });
 
-app.get("/test",()=>{
-  throw new Error("asudgbyuasgdyugasdyugasd")
-})
-
-
-
-
 app.use((err:Error,req:Request,res:Response,next:NextFunction)=>{
   console.log("Default express error handler called \n");
   console.log(err);
   return res.status(500).json({
-    err:err
+    err:err.message
   })
 })
+
+
 
 export {app};
